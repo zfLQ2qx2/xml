@@ -874,7 +874,7 @@ func (p *printer) writeStart(start *StartElement, close bool) error {
 	}
 	if close {
 		p.WriteString("/>")
-		// Pop elements stack
+                p.writeIndent(-1)
 		p.elements = p.elements[:len(p.elements)-1]
 	} else {
 		p.WriteByte('>')
